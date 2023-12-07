@@ -1,8 +1,5 @@
-import { useState, useEffect } from 'react';
-import InputLabel from '@mui/material/InputLabel';
+import { useEffect } from 'react';
 import { Dropdown } from 'primereact/dropdown';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 
 export default function ZoneSelection({ zone, allZones, setZone}) {
 

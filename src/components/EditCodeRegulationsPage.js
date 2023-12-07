@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { getZoneComplianceValues } from '../utils.js'
 import { Nav } from "tabler-react";
 import ZoneSelection from './ZoneSelection.js'

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Nav } from "tabler-react";
 import { SelectButton } from 'primereact/selectbutton';
 import "primereact/resources/themes/lara-light-blue/theme.css";

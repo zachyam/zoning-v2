@@ -6,8 +6,8 @@ import EditZonesPage from "./components/EditZonesPage";
 import HomePage from "./components/HomePage";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "@fortawesome/fontawesome-free/css/all.min.css";
 import "tabler-react/dist/Tabler.css";
 
 export default function App() {
