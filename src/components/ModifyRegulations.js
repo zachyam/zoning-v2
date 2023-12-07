@@ -80,7 +80,7 @@ export default function ModifyRegulations({ rows, setRows, zone, zoneComplianceV
     async function deleteRegulation(attributeToDelete) {
         try {
           const zoneNameConcat = zone['code'];
-          const response = await fetch(`http://localhost:4000/deleteZoningRegulations/${zoneNameConcat}`, {
+          const response = await fetch(`https://zoning-server.onrender.com/deleteZoningRegulations/${zoneNameConcat}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -178,7 +178,7 @@ export default function ModifyRegulations({ rows, setRows, zone, zoneComplianceV
       }
       try {
           const zoneNameConcat = zone['code'];
-          const response = await fetch(`http://localhost:4000/editZoneCompliance/${zoneNameConcat}`, {
+          const response = await fetch(`https://zoning-server.onrender.com/editZoneCompliance/${zoneNameConcat}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

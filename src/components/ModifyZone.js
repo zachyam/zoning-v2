@@ -95,7 +95,7 @@ export default function ModifyZone() {
 
     async function saveEditRow() {
         try {
-            const response = await fetch(`http://localhost:4000/editZone`, {
+            const response = await fetch(`https://zoning-server.onrender.com:4000/editZone`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
