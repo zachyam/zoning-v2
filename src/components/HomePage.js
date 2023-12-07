@@ -14,6 +14,7 @@ export default function HomePage() {
     const [zone, setZone] = useState("");
     const [projectAddress, setProjectAddress] = useState('');
     const [apn, setApn] = useState('')
+    const [projectCode, setProjectCode] = useState('')
     const [projectNumber, setProjectNumber] = useState('');
     const [projectApplicant, setProjectApplicant] = useState('');
     const [allZones, setAllZones] = useState("");
@@ -110,6 +111,11 @@ export default function HomePage() {
                             label="APN" 
                             icon="pencil-alt" 
                             onChange={(e) => setApn(e.target.value)}/>
+                            <MDBInput 
+                            type="code" 
+                            label="Code" 
+                            icon="pencil-alt" 
+                            onChange={(e) => setProjectCode(e.target.value)}/>
                         </div>
                     </form>
                 </MDBCol>
@@ -120,6 +126,7 @@ export default function HomePage() {
                 apn={apn}
                 projectNumber={projectNumber}
                 projectApplicant={projectApplicant}
+                projectCode={projectCode}
                 setRowModified={setRowModified}/>
         </div>
     )

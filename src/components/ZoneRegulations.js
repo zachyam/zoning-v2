@@ -93,7 +93,7 @@ function getColumns(codeCompliant, setCodeCompliant, zoneComplianceValues) {
   ];
 }
 
-export default function ZoneRegulations({ zone, projectAddress, apn, projectNumber, projectApplicant, setRowModified }) {
+export default function ZoneRegulations({ zone, projectAddress, apn, projectNumber, projectApplicant, projectCode, setRowModified }) {
   const [rows, setRows] = useState({});
   const [codeCompliant, setCodeCompliant] = useState({});
   const [zoneComplianceValues, setZoneComplianceValues] = useState({})
@@ -126,14 +126,14 @@ export default function ZoneRegulations({ zone, projectAddress, apn, projectNumb
       />
       <InputTextarea style={{display: 'inline-flex', marginTop: '2%', width: '25%'}} placeholder='Additional comments or remarks' onChange={(e) => setAdditionalComments(e.target.value)} rows={5} cols={30} />
       <div>
-        <SelectButton style={{display: 'inline-flex', marginTop: '2%'}} value={value} onChange={(e) => exportPDF(rows, codeCompliant, zone, projectAddress, apn, projectNumber, projectApplicant, additionalComments)} options={options} />
+        <SelectButton style={{display: 'inline-flex', marginTop: '2%'}} value={value} onChange={(e) => exportPDF(rows, codeCompliant, zone, projectAddress, apn, projectNumber, projectApplicant, projectCode, additionalComments)} options={options} />
       </div>
     </div>
     
   );
 }
 
-const exportPDF = (rows, codeCompliant, zone, projectAddress, apn, projectNumber, projectApplicant, additionalComments) => {
+const exportPDF = (rows, codeCompliant, zone, projectAddress, apn, projectNumber, projectApplicant, projectCode, additionalComments) => {
   const unit = "pt";
   const size = "A4"; // Use A1, A2, A3 or A4
   const orientation = "landscape"; // portrait or landscape
@@ -142,13 +142,14 @@ const exportPDF = (rows, codeCompliant, zone, projectAddress, apn, projectNumber
   const doc = new jsPDF(orientation, unit, size);
   doc.setLineHeightFactor(1.5);
   doc.setFontSize(11);
-  const zoneText = "Zone: " + zone;
+  const zoneText = "Zone: " + zone.name;
   const projectAddressText = "Project Address: " + projectAddress;
   const apnText = "APN: " + apn;
   const projectNumberText = "Project Number: " + projectNumber;
   const projectApplicantText = "Project Applicant: " + projectApplicant; 
+  const code = "Project Code: " + projectCode;
 
-  const text = [zoneText, projectAddressText, apnText, projectNumberText, projectApplicantText];
+  const text = [zoneText, projectAddressText, apnText, projectNumberText, projectApplicantText, code];
   const additionalCommentsSection = additionalComments != '' ? ['Additional comments or remarks: ', additionalComments] : additionalComments;
   const headers = [[" ", "Code Regulations", "Project Specifications", "Code Compliant (Y/N)", "Remarks"]];
 
@@ -160,7 +161,7 @@ const exportPDF = (rows, codeCompliant, zone, projectAddress, apn, projectNumber
     body: data
   };
 
-  doc.text(text, marginLeft, 40);
+  doc.text(text, marginLeft, 30);
   doc.autoTable(content);
   doc.text(additionalCommentsSection, marginLeft, 450);
   const fileName = projectNumber == '' ? "report.pdf" : projectNumber + "_report.pdf"
