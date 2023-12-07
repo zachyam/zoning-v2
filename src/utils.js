@@ -35,7 +35,7 @@ function getCodeRegulations(minVal, maxVal, unit) {
   export async function getZoneComplianceValues(zone, setRows, setZoneComplianceValues, setRowModified) {
     try {
       const zoneNameConcat = zone['code'];
-      const response = await fetch(`https://zoning-server.onrender.com/getZoneCompliance/${zoneNameConcat}`)
+      const response = await fetch(`http://localhost:4000/getZoneCompliance/${zoneNameConcat}`)
       const callback = await response.json();
       const zoneComplianceValues = {};
       if (callback != null) {

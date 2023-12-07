@@ -48,7 +48,7 @@ export default function AddNewRegulation({ zone, newCodeRegulationName, setNewCo
             const zoneNameConcat = zone['code'];
             const data = { newCodeRegulationName, newCodeRegulationVal, newCodeRegulationMinVal, newCodeRegulationMaxVal, unit, noMaximum, noMinimum }
             console.log(data)
-            const response = await fetch(`https://zoning-server.onrender.com/addZoneCompliance/${zoneNameConcat}`, {
+            const response = await fetch(`http://localhost:4000/addZoneCompliance/${zoneNameConcat}`, {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
@@ -56,11 +56,6 @@ export default function AddNewRegulation({ zone, newCodeRegulationName, setNewCo
             },
             body: JSON.stringify({ data }),
             });
-            response.setHeader("Access-Control-Allow-Origin", "*");
-            response.setHeader("Access-Control-Allow-Credentials", "true");
-            response.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-            response.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
-
 
             const responseData = await response.json();
             console.log(responseData);

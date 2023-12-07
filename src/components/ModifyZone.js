@@ -40,7 +40,7 @@ export default function ModifyZone() {
 
     async function getZones() {
         try {
-          const response = await fetch(`https://zoning-server.onrender.com/getAllZones`)
+          const response = await fetch(`http://localhost:4000/getAllZones`)
           const callback = await response.json();
           if (callback == []) {
             return;
@@ -60,7 +60,7 @@ export default function ModifyZone() {
     
     async function deleteZone(zoneNameToDelete) {
         try {
-            const response = await fetch(`https://zoning-server.onrender.com/deleteZone`, {
+            const response = await fetch(`http://localhost:4000/deleteZone`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ export default function ModifyZone() {
 
     async function saveEditRow() {
         try {
-            const response = await fetch(`https://zoning-server.onrender.com:4000/editZone`, {
+            const response = await fetch(`http://localhost:4000/editZone`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
