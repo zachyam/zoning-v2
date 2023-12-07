@@ -15,9 +15,9 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<HomePage />} />
-        <Route exact path="/EditCodeRegulationsPage" element={<EditCodeRegulationsPage />} />
-        <Route exact path="/EditZonesPage" element={<EditZonesPage />} />
+        <Link to="/" element={<HomePage />} />
+        <Link to="/EditCodeRegulationsPage" element={<EditCodeRegulationsPage />} />
+        <Link to="/EditZonesPage" element={<EditZonesPage />} />
       </Routes>
     </Router>
     
