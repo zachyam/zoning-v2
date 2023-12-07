@@ -127,6 +127,7 @@ export default function HomePage() {
                 projectNumber={projectNumber}
                 projectApplicant={projectApplicant}
                 projectCode={projectCode}
+                rowModified={rowModified}
                 setRowModified={setRowModified}/>
         </div>
     )
