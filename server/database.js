@@ -15,7 +15,9 @@ const pool = new Pool({
     host: "db-postgresql-nyc3-74989-do-user-2929740-0.c.db.ondigitalocean.com",
     port: 25060,
     database: "defaultdb",
-    sslmode: "require"
+    ssl: {
+        rejectUnauthorized: false, // Use this option to ignore self-signed certificate errors
+      },
 })
 
 // username = doadmin

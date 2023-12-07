@@ -20,7 +20,7 @@ export default function HomePage() {
     
     async function getZones() {
         try {
-          const response = await fetch(`https://db-postgresql-nyc3-74989-do-user-2929740-0.c.db.ondigitalocean.com:4000/getAllZones`)
+          const response = await fetch(`https://db-postgresql-nyc3-74989-do-user-2929740-0.c.db.ondigitalocean.com/getAllZones`)
           const callback = await response.json();
           if (callback == []) {
             return;
