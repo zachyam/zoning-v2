@@ -16,8 +16,8 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="https://zoning-beta.surge.sh/EditCodeRegulationsPage" element={<EditCodeRegulationsPage />} />
-        <Route path="https://zoning-beta.surge.sh/EditZonesPage" element={<EditZonesPage />} />
+        <Route path="/EditCodeRegulationsPage" element={<EditCodeRegulationsPage />} />
+        <Route path="/EditZonesPage" element={<EditZonesPage />} />
       </Routes>
     </Router>
     
