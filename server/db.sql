@@ -21,8 +21,8 @@ VALUES
 CREATE TABLE attributeValues (
 	zoneName TEXT,
 	attributeName TEXT,
-	minVal INT,
-	maxVal INT,
+	minVal DOUBLE PRECISION,
+	maxVal DOUBLE PRECISION,
 	unit TEXT
 );
 

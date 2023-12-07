@@ -9,7 +9,7 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Access-Control-Allow-Origin', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
     credentials: true
 }))
-// app.use(express.json());
+app.use(express.json());
 
 app.get('/', (req, res, next) => {
     res.status(200).json({ success: 'Hello Server' });
@@ -23,7 +23,6 @@ app.get("/getZoneCompliance/:zoneNameConcat", async(req, res) => {
 })
 
 app.post("/addZoneCompliance/:zoneNameConcat", async(req, res) => {
-    console.log(req.body);
     const data = req.body.data;
     const zone = req.params.zoneNameConcat;
     const unit = data.unit;
