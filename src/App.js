@@ -4,7 +4,7 @@ import React from "react";
 import EditCodeRegulationsPage from "./components/EditCodeRegulationsPage";
 import EditZonesPage from "./components/EditZonesPage";
 import HomePage from "./components/HomePage";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "@fortawesome/fontawesome-free/css/all.min.css";
