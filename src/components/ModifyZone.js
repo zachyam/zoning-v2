@@ -60,7 +60,7 @@ export default function ModifyZone() {
     
     async function deleteZone(zoneNameToDelete) {
         try {
-            const response = await fetch(`https://zoning-server.onrender.com:4000/deleteZone`, {
+            const response = await fetch(`https://zoning-server.onrender.com/deleteZone`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
