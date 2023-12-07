@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { getZoneComplianceValues } from '../utils.js'
 import { Nav } from "tabler-react";
+import { Link } from "react-router-dom";
 import ZoneSelection from './ZoneSelection.js'
 import AddNewRegulation from './AddNewRegulation.js';
 import ModifyRegulations from './ModifyRegulations.js';
@@ -75,17 +76,24 @@ export default function EditCodeRegulationsPage() {
     }
     return (
         <div style={{ marginLeft: '2%', marginRight: '2%'}}>
-            <Nav>
-              <Nav.Item to="/" icon="home">
-                Home
-              </Nav.Item>
-              <Nav.Item to="/EditCodeRegulationsPage" icon="grid" active={true}>
-                Edit Code Regulations
-              </Nav.Item>
-              <Nav.Item to="/EditZonesPage" icon="grid">
-                Edit Zones
-              </Nav.Item>
-            </Nav>
+            <ul class="nav nav-tabs">
+                <ul class="nav-item">
+                  <Link to="/">
+                    Home
+                  </Link>
+                </ul>
+                <ul class="nav-item">
+                    <Nav.Item active={true}>
+                        Edit Code Regulations
+                    </Nav.Item>
+                </ul>
+                <ul class="nav-item">
+                    <Link to="/EditZonesPage">
+                        Edit Zones
+                    </Link>
+                </ul>
+                    
+            </ul>
             <ZoneSelection 
                 zone={zone}
                 setZone={setZone}

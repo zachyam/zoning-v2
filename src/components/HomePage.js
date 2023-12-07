@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Nav } from "tabler-react";
+import { Link } from "react-router-dom";
 import ZoneSelection from "./ZoneSelection";
 import ZoneRegulations from "./ZoneRegulations";
 import {
@@ -50,17 +51,22 @@ export default function HomePage() {
     return (
         <div style={{ marginLeft: '2%', marginRight: '2%', paddingBottom: '2%'}}>
             <div >
-                <Nav>
-                    <Nav.Item icon="home" active={true}>
+                <ul class="nav nav-tabs">
+                    <Nav.Item active={true}>
                         Home
-                        </Nav.Item>
-                    <Nav.Item to="/EditCodeRegulationsPage" icon="grid">
-                        Edit Code Regulations
                     </Nav.Item>
-                    <Nav.Item to="https://zoning-beta.surge.sh/EditZonesPage" icon="grid">
-                        Edit Zones
-                    </Nav.Item>
-                </Nav>
+                    <ul class="nav-item">
+                        <Link to="/EditCodeRegulationsPage" >
+                            Edit Code Regulations
+                        </Link>
+                    </ul>
+                    <ul class="nav-item">
+                        <Link to="EditZonesPage">
+                            Edit Zones
+                        </Link>
+                    </ul>
+                    
+                </ul>
         
              </div>
             <ZoneSelection 

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Nav } from "tabler-react";
+import { Link } from "react-router-dom";
 import { SelectButton } from 'primereact/selectbutton';
 import "primereact/resources/themes/lara-light-blue/theme.css";
 import ModifyZone from './ModifyZone';
@@ -25,17 +26,24 @@ export default function EditZonesPage() {
 
     return (
         <div style={{ marginLeft: '2%', marginRight: '2%'}}>
-            <Nav>
-              <Nav.Item to="/" icon="home">
-                Home
-              </Nav.Item>
-              <Nav.Item to="/EditCodeRegulationsPage" icon="grid">
-                Edit Code Regulations
-              </Nav.Item>
-              <Nav.Item to="/EditZonesPage" icon="grid" active={true}>
-                Edit Zones
-              </Nav.Item>
-            </Nav>
+           <ul class="nav nav-tabs">
+                <ul class="nav-item">
+                    <Link to="/" >
+                        Home
+                    </Link>
+                </ul>
+                <ul class="nav-item">
+                    <Link to="/EditCodeRegulationsPage" >
+                        Edit Code Regulations
+                    </Link>
+                </ul>
+                <ul class="nav-item">
+                  <Nav.Item active={true}>
+                    Edit Zones
+                  </Nav.Item>
+                </ul>
+                
+            </ul>
             <div>
               <SelectButton style={{display: 'inline-flex', marginTop: '2%' }} value={value} onChange={(e) => setView(e.value)} options={options} />
             </div>
