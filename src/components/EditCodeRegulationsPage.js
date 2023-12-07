@@ -33,7 +33,7 @@ export default function EditCodeRegulationsPage() {
 
     async function getZones() {
       try {
-        const response = await fetch(`http://localhost:4000/getAllZones`)
+        const response = await fetch(`https://zoning-server.onrender.com:4000/getAllZones`)
         const callback = await response.json();
         if (callback == []) {
           return;
