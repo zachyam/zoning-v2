@@ -48,7 +48,7 @@ export default function AddNewRegulation({ zone, newCodeRegulationName, setNewCo
             const zoneNameConcat = zone['code'];
             const data = { newCodeRegulationName, newCodeRegulationVal, newCodeRegulationMinVal, newCodeRegulationMaxVal, unit, noMaximum, noMinimum }
             console.log(data)
-            const response = await fetch(`http://localhost:4000/addZoneCompliance/${zoneNameConcat}`, {
+            const response = await fetch(`https://zoning-server.onrender.com//${zoneNameConcat}`, {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json'

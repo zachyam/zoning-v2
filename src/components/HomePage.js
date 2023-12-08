@@ -22,7 +22,7 @@ export default function HomePage() {
     
     async function getZones() {
         try {
-          const response = await fetch(`http://localhost:4000/getAllZones`)
+          const response = await fetch(`https://zoning-server.onrender.com/getAllZones`)
           const callback = await response.json();
           if (callback == []) {
             return;
