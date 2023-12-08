@@ -18,7 +18,7 @@ export default function AddZone() {
 
     async function addNewZone() {
         try {
-            const response = await fetch(`https://zoning-server.onrender.com//addNewZone`, {
+            const response = await fetch(`https://zoning-server.onrender.com/addNewZone`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
